@@ -15,8 +15,8 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-BACKUP_PATH="/home/$USER/BACKUP"
-mkdir -p $BACKUP_PATH
+BACKUP_PATH="/home/"$(whoami)"/BACKUP"
+mkdir -p "$BACKUP_PATH"
 # Wait for camera
 camera=$(gphoto2 --auto-detect | grep usb)
 while [ -z "$camera" ]; do
@@ -24,6 +24,6 @@ while [ -z "$camera" ]; do
 	camera=$(gphoto2 --auto-detect | grep usb)
 done
 # Transfer files
-gphoto2 --filename "BACKUP_PATH/%d%m%Y-%H%M%S-%n.%C" --get-all-files --skip-existing >>"/tmp/loppe.log" 2>&1
+gphoto2 --filename "$BACKUP_PATH/%d%m%Y-%H%M%S-%n.%C" --get-all-files --skip-existing >>"/tmp/loppe.log" 2>&1
 # Shut down
-sudo shutdown
+sudo poweroff

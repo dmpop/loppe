@@ -30,7 +30,7 @@ fi
 cd
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y git gphoto2 screen usbmount exfat-fuse exfat-utils
+sudo apt install -y git gphoto2 screen usbmount exfat-fuse exfat-utils samba samba-common-bin
 sudo apt autoremove -y
 
 git clone https://github.com/dmpop/loppe.git
@@ -47,7 +47,7 @@ VERBOSE=no
 EOL
 crontab -l | {
         cat
-        echo "@reboot sudo /home/"$USER"/loppe/loppe.sh"
+        echo "@reboot /home/"$USER"/loppe/loppe.sh"
         } | crontab
 
 # Configure Samba
