@@ -39,8 +39,7 @@ sudo ln -s $HOME/loppe/loppe.sh /usr/local/bin/loppe
 sudo mv /etc/usbmount/usbmount.conf /etc/usbmount/usbmount.conf.bak
 sudo bash -c "cat > /etc/usbmount/usbmount.conf" << EOL
 ENABLED=1
-MOUNTPOINTS="/media/usb0 /media/usb1 /media/usb2 /media/usb3
-             /media/usb4 /media/usb5 /media/usb6 /media/usb7"
+MOUNTPOINTS="/media/usb0 /media/usb1 /media/usb2 /media/usb3 /media/usb4"
 FILESYSTEMS="vfat exfat ext2 ext3 ext4 hfsplus"
 MOUNTOPTIONS="sync,noexec,nodev,noatime,nodiratime,uid=1000,gid=1000"
 FS_MOUNTOPTIONS=" "
@@ -60,7 +59,7 @@ pw="loppe"
 ) | sudo smbpasswd -s -a "$USER"
 sudo sh -c "echo '[Loppe]' >> /etc/samba/smb.conf"
 sudo sh -c "echo 'comment = Loppe' >> /etc/samba/smb.conf"
-sudo sh -c "echo 'path = /media/usb0' >> /etc/samba/smb.conf"
+sudo sh -c "echo 'path = /home/$USER/BACKUP' >> /etc/samba/smb.conf"
 sudo sh -c "echo 'browseable = yes' >> /etc/samba/smb.conf"
 sudo sh -c "echo 'force user = $USER' >> /etc/samba/smb.conf"
 sudo sh -c "echo 'force group = $USER' >> /etc/samba/smb.conf"

@@ -1,6 +1,6 @@
 # Loppe
 
-Loppe transforms a Raspberry Pi or any other single-board computer running a Debian-based Linux distribution into a simple automatic camera backup device. It works with any camera supported by [gPhoto2](http://gphoto.org/proj/libgphoto2/support.php) through a cable connection. Loppe stands for: **Linux**, **O**ffline, **P**ocketable, **P**rivate, **E**xtensible. It also means _flea_ in Danish.
+Loppe transforms a Raspberry Pi or any other single-board computer running a Debian-based Linux distribution into a simple automatic camera backup device. It works with any camera supported by [gPhoto2](http://gphoto.org/proj/libgphoto2/support.php) through a cable connection. Loppe stands for: **L**inux, **O**ffline, **P**ocketable, **P**rivate, **E**xtensible. It also means _flea_ in Danish.
 
 ## Dependencies
 

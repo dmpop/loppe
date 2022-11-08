@@ -15,7 +15,8 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-BACKUP_PATH="/media/usb0/"
+BACKUP_PATH="/home/$USER/BACKUP"
+mkdir -p $BACKUP_PATH
 # Wait for camera
 camera=$(gphoto2 --auto-detect | grep usb)
 while [ -z "$camera" ]; do
