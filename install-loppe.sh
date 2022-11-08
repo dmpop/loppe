@@ -71,12 +71,7 @@ sudo sh -c "echo 'create mask = 0777' >> /etc/samba/smb.conf"
 sudo sh -c "echo 'directory mask = 0777' >> /etc/samba/smb.conf"
 sudo samba restart
 
-# Install comitup
-sudo mv /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf.old
-sudo apt install -y comitup
-sudo bash -c 'echo "ap_name: loppe-<nn>" >> "/etc/comitup.conf"'
-dialog --clear \
-   --title "All done!" \
-   --msgbox "After reboot, connect to the loppe-<nn> network and open http://10.41.0.1/" 7 70
-clear
+echo "-------------------------------------"
+echo "All done! The system will reboot now."
+echo "-------------------------------------"
 sudo reboot
