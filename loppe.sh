@@ -17,6 +17,8 @@
 
 BACKUP_PATH="/home/"$(whoami)"/BACKUP"
 mkdir -p "$BACKUP_PATH"
+# Set the ACT LED to heartbeat to indicate that the script is running
+sudo sh -c "echo heartbeat > /sys/class/leds/led0/trigger"
 # Wait for camera
 camera=$(gphoto2 --auto-detect | grep usb)
 while [ -z "$camera" ]; do
